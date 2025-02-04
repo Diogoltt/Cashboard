@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="../static/styles/cadastro.css">
+    <title>CashBoard - Cadastro</title>
+</head>
+
+<body>
+    <main id="container">
+        <form id="form-register">
+            <div class="register-header">
+                <div class="logo">
+                    <img src="" alt="img-logo">
+                    <h1>Ca$h Board</h1>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="">Nome</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" required>
+            </div>
+
+            <div class="input-group">
+                <label for="">Email</label>
+                <input type="email" id="email" placeholder="Digite seu email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" name="password" id="password" placeholder="••••••••" required>
+                <i class="bi bi-eye-fill" id="toggle-password"></i>
+            </div>
+
+            <div class="input-group">
+                <label for="confirm-password">Confirma Senha</label>
+                <input type="password" name="confirm-password" id="confirm-password" placeholder="••••••••"
+                    required>
+                <i class="bi bi-eye-fill" id="toggle-confirm-password"></i>
+            </div>
+
+            <div class="password-requirements">
+                <p>A senha deve conter:</p>
+                <ul>
+                    <li id="length_validate">Pelo menos 8 caracteres</li>
+                    <li id="uppercase_validate">Pelo menos uma letra maiúscula (A-Z)</li>
+                    <li id="number_validate">Pelo menos um número (0-9)</li>
+                    <li id="special_validate">Pelo menos um caractere especial (como !@#$%^&*)</li>
+                </ul>
+            </div>
+
+            <div class="btn-group">
+                <button type="submit">Cadastrar Usuário</button>
+            </div>
+        </form>
+
+        <section id="wave">
+            <div class="wave-svg">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1925 466" width="1925" height="466" fill="none">
+                    <g clip-path="url(#clip0_5_10)">
+                        <path
+                            d="M0 326.2L26.7361 287.318C53.4722 249.019 106.944 170.381 160.417 178.682C213.889 186.4 267.361 279.6 320.833 264.018C374.306 249.019 427.778 123.781 481.25 108.782C534.722 93.2 588.194 186.4 641.667 248.582C695.139 310.181 748.611 342.219 802.083 326.2C855.556 310.181 909.028 249.019 962.5 248.582C1015.97 249.019 1069.44 310.181 1122.92 326.2C1176.39 342.219 1229.86 310.181 1283.33 326.2C1336.81 342.219 1390.28 403.381 1443.75 427.118C1497.22 449.981 1550.69 435.419 1604.17 380.518C1657.64 326.2 1711.11 233 1764.58 201.982C1818.06 170.381 1871.53 202.419 1898.26 217.418L1925 233V466H1898.26C1871.53 466 1818.06 466 1764.58 466C1711.11 466 1657.64 466 1604.17 466C1550.69 466 1497.22 466 1443.75 466C1390.28 466 1336.81 466 1283.33 466C1229.86 466 1176.39 466 1122.92 466C1069.44 466 1015.97 466 962.5 466C909.028 466 855.556 466 802.083 466C748.611 466 695.139 466 641.667 466C588.194 466 534.722 466 481.25 466C427.778 466 374.306 466 320.833 466C267.361 466 213.889 466 160.417 466C106.944 466 53.4722 466 26.7361 466H0V326.2Z"
+                            fill="#25744D" />
+                        <path
+                            d="M246 303.147L272.736 264.265C299.472 225.966 352.944 147.329 406.417 155.629C459.889 163.347 513.361 256.547 566.833 240.965C620.306 225.966 673.778 100.729 727.25 85.7292C780.722 70.1474 834.194 163.347 887.667 225.529C941.139 287.129 994.611 319.166 1048.08 303.147C1101.56 287.129 1155.03 225.966 1208.5 225.529C1261.97 225.966 1315.44 287.129 1368.92 303.147C1422.39 319.166 1475.86 287.129 1529.33 303.147C1582.81 319.166 1636.28 380.329 1689.75 404.065C1743.22 426.929 1796.69 412.366 1850.17 357.465C1903.64 303.147 1957.11 209.947 2010.58 178.929C2064.06 147.329 2117.53 179.366 2144.26 194.365L2171 209.947V442.947H2144.26C2117.53 442.947 2064.06 442.947 2010.58 442.947C1957.11 442.947 1903.64 442.947 1850.17 442.947C1796.69 442.947 1743.22 442.947 1689.75 442.947C1636.28 442.947 1582.81 442.947 1529.33 442.947C1475.86 442.947 1422.39 442.947 1368.92 442.947C1315.44 442.947 1261.97 442.947 1208.5 442.947C1155.03 442.947 1101.56 442.947 1048.08 442.947C994.611 442.947 941.139 442.947 887.667 442.947C834.194 442.947 780.722 442.947 727.25 442.947C673.778 442.947 620.306 442.947 566.833 442.947C513.361 442.947 459.889 442.947 406.417 442.947C352.944 442.947 299.472 442.947 272.736 442.947H246V303.147Z"
+                            fill="#25744D" fill-opacity="0.5" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_5_10">
+                            <rect width="1925" height="466" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+        </section>
+    </main>
+    <script src="{% static 'scripts/cadastro.js' %}"></script>
+    <script src="{% static 'scripts/toggle_password.js' %}"></script>
+</body>
+
+
+</html>

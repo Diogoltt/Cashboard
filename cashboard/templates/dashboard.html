@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}">
+    <title>CashBoard - Dashboard</title>
+</head>
+<body>
+    <!-- Barra de navegação -->
+    <header class="headerDashboard">
+        <nav>
+            <div class="logo">
+                <h1>Ca$hBoard</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Relatórios</a></li>
+                <li><a href="#">Configurações</a></li>
+                <li><a href="{% url 'index' %}">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <section class="dashboard-welcome">
+            <h2>Bem-vindo de volta, <span id="user-name">Usuário</span>!</h2>
+            <p>Aqui estão os detalhes do seu painel de controle.</p>
+        </section>
+
+        <!-- Seção com algumas métricas ou dados -->
+        <section class="stats">
+            <div class="stat-item">
+                <h3>Total de Vendas</h3>
+                <p class="stat-value">R$ 5.000,00</p>
+            </div>
+            <div class="stat-item">
+                <h3>Usuários Ativos</h3>
+                <p class="stat-value">120</p>
+            </div>
+            <div class="stat-item">
