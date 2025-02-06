@@ -1,44 +1,83 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Financeiro</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}">
-    <title>CashBoard - Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
-    <!-- Barra de navegação -->
     <header class="headerDashboard">
-        <nav>
-            <div class="logo">
-                <h1>Ca$hBoard</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Relatórios</a></li>
-                <li><a href="#">Configurações</a></li>
-                <li><a href="{% url 'index' %}">Sair</a></li>
-            </ul>
-        </nav>
+        <div>
+            <p class="blablaHeader">Ca$h Board</p>
+            <a href="" class="ancora">Gráficos</a>
+            <a rel="noopener noreferrer" class="ancora">•</a>
+            <a href="" class="ancora">Minhas finanças</a>
+        </div>
+
     </header>
-
-    <!-- Conteúdo principal -->
-    <main>
-        <section class="dashboard-welcome">
-            <h2>Bem-vindo de volta, <span id="user-name">Usuário</span>!</h2>
-            <p>Aqui estão os detalhes do seu painel de controle.</p>
-        </section>
-
-        <!-- Seção com algumas métricas ou dados -->
-        <section class="stats">
-            <div class="stat-item">
-                <h3>Total de Vendas</h3>
-                <p class="stat-value">R$ 5.000,00</p>
+    </header>
+    <div class="container">
+        <div class="header">
+            <div class="metric green">
+                <span>Total de Receitas</span>
+                <h2>R$ 32.452,00</h2>
             </div>
-            <div class="stat-item">
-                <h3>Usuários Ativos</h3>
-                <p class="stat-value">120</p>
+            <div class="metric red">
+                <span>Total de Despesas</span>
+                <h2>R$ 22.901,00</h2>
             </div>
-            <div class="stat-item">
+            <div class="metric gray">
+                <span>Saldo</span>
+                <h2>R$ 9.551,00</h2>
+            </div>
+            <div class="metric green">
+                <span>1º Trimestre</span>
+                <h2>R$ 1.758</h2>
+            </div>
+            <div class="metric green">
+                <span>2º Trimestre</span>
+                <h2>R$ 4.028</h2>
+            </div>
+            <div class="metric green">
+                <span>3º Trimestre</span>
+                <h2>R$ 3.765</h2>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-container">
+                <h3>Total de Receitas (R$)</h3>
+                <canvas id="incomeChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Meio de Pagamento</h3>
+                <canvas id="paymentChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Fontes de Renda (R$)</h3>
+                <canvas id="incomeSourceChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Total de Despesas (R$)</h3>
+                <canvas id="expensesChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Receitas vs. Despesas</h3>
+                <canvas id="incomeVsExpensesChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Fontes de Despesa (R$)</h3>
+                <canvas id="expenseSourceChart"></canvas>
+            </div>
+        </div>
+    </div>
+    {% load static %}
+    <script type="module" src="{% static 'scripts/dashboard.js' %}"></script>
+</body>
+
+</html>

@@ -7,5 +7,5 @@ urlpatterns = [
     path('cadastro', views.cadastro, name='cadastro'),
     path('mercado', views.mercado, name='mercado'),
     path('pet', views.pet, name='pet'),
-    path('dashboards', views.dashboards, name='dashboards'),
+    path('dashboard', views.dashboard, name='dashboard'),
 ]

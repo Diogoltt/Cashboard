@@ -9,5 +9,5 @@ def mercado(request):
     return render(request, 'mercado.html')
 def pet(request):
     return render(request, 'pet.html')
-def dashboards(request):
+def dashboard(request):
     return render(request, 'dashboard.html')
