@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Financeiro</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header class="headerDashboard">
+        <div>
+            <p class="blablaHeader">Ca$h Board</p>
+            <a href="" class="ancora">Gráficos</a>
+            <a rel="noopener noreferrer" class="ancora">•</a>
+            <a href="" class="ancora">Minhas finanças</a>
+        </div>
+
+    </header>
+    <div class="container">
+        <div class="btn-relatorio">
+            <button>Gerar Relatório</button>
+        </div>
+        <div class="container-conteudo">
+            <div class="tabela-financas">
+                <table class="tabela-conteudo">
+                    <thead>
+                        <tr>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Forma de Pagamento</th>
+                            <th scope="col">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">01/01/2025</th>
+                            <td>Veterinario Vanderlei</td>
+                            <td>Cartão de débito</td>
+                            <td>R$ 69,30</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">05/01/2025</th>
+                            <td>Atacadão dos bicho - compra da calopsita Jorgin Louro José</td>
+                            <td>Dinheiro</td>
+                            <td>R$ 56,54</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="categorias">
+                <input class="busca" type="text" name="" id="" placeholder="Pesquisar...">
+                <div class="grupo-botoes">
+                    <button class="btn-cat adicionar">Adicionar</button>
+                    <button class="btn-cat remover">Remover</button>
+                    <button class="btn-cat editar">Editar</button>
+                </div>
+                <div class="categorias-conteudo">
+                    <a class="categoria-input mercado" href="">
+                        <img src="{%static 'assets/mercadosvg.svg'%}" alt="">
+                    </a>
+                    <a class="categoria-input pet" href="">
+                        <img src="{%static 'assets/petsvg.svg'%}" alt="">
+                    </a>
+                    <a class="categoria-input lazer" href="">
+                        <img src="{%static 'assets/lazersvg.svg'%}" alt="">
+                    </a>
+                    <a class="categoria-input farmacia" href="">
+                        <img src="{%static 'assets/farmaciasvg.svg'%}" alt="">
+                    </a>
+                    <a class="categoria-input viagem" href="">
+                        <img src="{%static 'assets/viagemsvg.svg'%}" alt="">
+                    </a>
+                    <a class="categoria-input poupanca" href="">
+                        <img src="{%static 'assets/poupancasvg.svg'%}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="{% static 'scripts/dashboard.js' %}"></script>
+</body>
+</html>

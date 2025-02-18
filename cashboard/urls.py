@@ -7,5 +7,10 @@ urlpatterns = [
     path('cadastro', views.cadastro, name='cadastro'),
     path('mercado', views.mercado, name='mercado'),
     path('pet', views.pet, name='pet'),
-    path('dashboard', views.dashboard, name='dashboard'),
+    path('lazer', views.lazer, name='lazer'),
+    path('viagem', views.viagem, name='viagem'),
+    path('farmacia', views.farmacia, name='farmacia'),
+    path('poupanca', views.poupanca, name='poupanca'),
+    path('dashboards', views.dashboards, name='dashboards'),
+    
 ]

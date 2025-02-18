@@ -1,0 +1,203 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.headerDashboard {
+    background-color: #25744D;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blablaHeader {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.ancora {
+    text-decoration: none;
+    color: #ffff;
+    font-weight: bold;
+    margin-right: 0.5vw;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-circle {
+    width: 32px;
+    height: 32px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.blablaHeader {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ancora {
+    text-decoration: none;
+    color: #ffff;
+    font-weight: bold;
+}
+
+.ancora.active {
+    text-decoration: underline;
+}
+
+.nav-separator {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.container {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-relatorio button{
+        background-color: #25744D;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.container-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.categorias {
+    display: flex;
+    flex-direction: column;
+}
+
+.categorias-conteudo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.categoria-input {
+    padding: 2rem 2rem;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.busca{
+    padding: 1rem;
+}
+
+.grupo-botoes
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.btn-cat{
+    background-color: #25744D;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.categoria-input img {
+    width: 100px;
+    height: 100px;
+}
+
+.adicionar{
+    background-color: rgba(37, 116, 77, 0.2);
+    color: #25744D;
+    font-weight: bold;
+}
+
+.remover{
+    background-color: rgba(239, 0, 0, 0.2);
+    color: #EF0000;
+    font-weight: bold;
+}
+
+.editar{
+    background-color: rgba(255, 217, 102, 0.2);
+    color: #887335;
+    font-weight: bold;
+}
+
+.mercado {
+    background-color: rgba(255, 102, 102, 0.2);
+    border: 2px solid #FF6666;
+}
+
+.pet {
+    background-color: rgba(102, 102, 255, 0.2);
+    border: 2px solid #6666FF;
+}
+
+.lazer {
+    background-color: rgba(230, 172, 0, 0.2);
+    border: 2px solid #E6AC00;
+}
+
+.farmacia {
+    background-color: rgba(255, 140, 102, 0.2);
+    border: 2px solid #FF8C66;
+}
+
+.viagem {
+    background-color: rgba(0, 153, 51, 0.2);
+    border: 2px solid #009933;
+}
+
+.poupanca {
+    background-color: rgba(204, 153, 255, 0.2);
+    border: 2px solid #CC99FF;
+}
