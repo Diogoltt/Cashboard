@@ -13,25 +13,42 @@ body {
     background-color: #fff;
 }
 
+/* Container para manter o alinhamento */
 #container {
     display: flex;
     width: 100%;
+    height: 100vh;
     justify-content: center;
+    position: relative; /* Adicionado para garantir o controle de camadas */
 }
 
-#form-register {
-    margin-top: 5rem;
+/* Controlar a largura e o layout responsivo da section */
+#cadastro {
+    margin-top: 3rem;
     background-color: #fff;
     border: 5px solid #c3c3c3;
     border-radius: 20px;
-    padding: 2rem;
-    height: 70vh;
+    padding: 1rem;
+    height: 90%; /* Remover altura fixa */
     z-index: 1;
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+    width: 90%; /* Ajustar a largura conforme necessário */
+    max-width: 600px; /* Definir uma largura máxima */
+    position: relative; /* Garantir que o formulário não sobreponha as ondas */
 }
 
+/* Remover fundo do form e garantir responsividade */
+#form-register {
+    background: none; /* Remover fundo */
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    width: 100%;
+}
+
+/* Logos, título e inputs como estão */
 .logo img {
     width: 200px;
     height: 200px;
@@ -133,10 +150,29 @@ body {
     color: red;
 }
 
+/* Ajuste da wave para garantir que ela não cubra o formulário */
 #wave {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     overflow: hidden;
+    z-index: -1; /* Garante que a wave fique abaixo do conteúdo */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #cadastro {
+        padding: 1rem;
+        width: 100%;
+        max-width: none;
+    }
+
+    .input-group input {
+        font-size: 14px;
+    }
+
+    .btn-group button {
+        font-size: 14px;
+    }
 }

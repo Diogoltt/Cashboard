@@ -13,7 +13,7 @@
 
 <body>
     <main id="container">
-        <form id="form-register">
+        <section id="cadastro">
             <div class="register-header">
                 <div class="logo">
                     <img src="" alt="img-logo">
@@ -21,43 +21,50 @@
                 </div>
             </div>
 
-            <div class="input-group">
-                <label for="">Nome</label>
-                <input type="text" id="nome" placeholder="Digite seu nome" required>
-            </div>
-
-            <div class="input-group">
-                <label for="">Email</label>
-                <input type="email" id="email" placeholder="Digite seu email" required>
-            </div>
-
-            <div class="input-group">
-                <label for="password">Senha</label>
-                <input type="password" name="password" id="password" placeholder="••••••••" required>
-                <i class="bi bi-eye-fill" id="toggle-password"></i>
-            </div>
-
-            <div class="input-group">
-                <label for="confirm-password">Confirma Senha</label>
-                <input type="password" name="confirm-password" id="confirm-password" placeholder="••••••••"
-                    required>
-                <i class="bi bi-eye-fill" id="toggle-confirm-password"></i>
-            </div>
-
-            <div class="password-requirements">
-                <p>A senha deve conter:</p>
-                <ul>
-                    <li id="length_validate">Pelo menos 8 caracteres</li>
-                    <li id="uppercase_validate">Pelo menos uma letra maiúscula (A-Z)</li>
-                    <li id="number_validate">Pelo menos um número (0-9)</li>
-                    <li id="special_validate">Pelo menos um caractere especial (como !@#$%^&*)</li>
-                </ul>
-            </div>
-
-            <div class="btn-group">
-                <button type="submit">Cadastrar Usuário</button>
-            </div>
-        </form>
+            <form id="form-register" method="POST" action="{% url 'cadastro' %}">
+                {% csrf_token %}
+                {% if error %}
+                <p style="color: red;">{{ error }}</p>
+                {% endif %}
+    
+                <div class="input-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+    
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                </div>
+    
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" name="password" id="password" placeholder="••••••••" required>
+                    <i class="bi bi-eye-fill" id="toggle-password"></i>
+                </div>
+    
+                <div class="input-group">
+                    <label for="confirm-password">Confirma Senha</label>
+                    <input type="password" name="confirm-password" id="confirm-password" placeholder="••••••••"
+                        required>
+                    <i class="bi bi-eye-fill" id="toggle-confirm-password"></i>
+                </div>
+    
+                <div class="password-requirements">
+                    <p>A senha deve conter:</p>
+                    <ul>
+                        <li id="length_validate">Pelo menos 8 caracteres</li>
+                        <li id="uppercase_validate">Pelo menos uma letra maiúscula (A-Z)</li>
+                        <li id="number_validate">Pelo menos um número (0-9)</li>
+                        <li id="special_validate">Pelo menos um caractere especial (como !@#$%^&*)</li>
+                    </ul>
+                </div>
+    
+                <div class="btn-group">
+                    <button type="submit">Cadastrar Usuário</button>
+                </div>
+            </form>
+        </section>
 
         <section id="wave">
             <div class="wave-svg">
@@ -79,7 +86,6 @@
             </div>
         </section>
     </main>
-    <script src="{% static 'scripts/cadastro.js' %}"></script>
     <script src="{% static 'scripts/toggle_password.js' %}"></script>
 </body>
 
