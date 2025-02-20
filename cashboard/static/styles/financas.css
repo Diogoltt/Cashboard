@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body {
-    font-family: Arial, sans-serif;
+    font-family: Poppins, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
@@ -14,9 +15,18 @@ body {
     align-items: center;
 }
 
-.blablaHeader {
+.headerDashboard img{
+    height: 50px;
+    width: 50px;
+    padding-right: 5px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
     font-size: 24px;
     font-weight: bold;
+    user-select: none;
 }
 
 .ancora {
@@ -24,6 +34,18 @@ body {
     color: #ffff;
     font-weight: bold;
     margin-right: 0.5vw;
+}
+
+.header a:active {
+    color: var(#009933);
+    /* Altere a cor ao clicar */
+    font-weight: bold;
+    /* Deixa o texto em negrito ao ser clicado */
+}
+
+
+.header a:visited {
+    color: whitesmoke;
 }
 
 .header-content {
@@ -85,8 +107,9 @@ body {
     flex-direction: column;
 }
 
-.btn-relatorio button{
-        background-color: #25744D;
+.btn-relatorio button {
+    background-color: #25744D;
+    font-family: Poppins, sans-serif;
     color: white;
     border: none;
     padding: 1rem 2rem;
@@ -122,20 +145,20 @@ body {
     border-radius: 20px;
 }
 
-.busca{
+.busca {
     padding: 1rem;
 }
 
-.grupo-botoes
-{
+.grupo-botoes {
     display: flex;
     align-items: center;
     justify-content: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 1rem 0 3rem 0;
+
 }
 
-.btn-cat{
+.btn-cat {
     background-color: #25744D;
     color: white;
     border: none;
@@ -154,19 +177,19 @@ body {
     height: 100px;
 }
 
-.adicionar{
+.categoria-input:hover{
+    filter: drop-shadow(0px 0px 5px #cdcdcd);
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
+
+.adicionar {
     background-color: rgba(37, 116, 77, 0.2);
     color: #25744D;
     font-weight: bold;
 }
 
-.remover{
-    background-color: rgba(239, 0, 0, 0.2);
-    color: #EF0000;
-    font-weight: bold;
-}
-
-.editar{
+.editar {
     background-color: rgba(255, 217, 102, 0.2);
     color: #887335;
     font-weight: bold;
@@ -201,20 +224,19 @@ body {
     background-color: rgba(204, 153, 255, 0.2);
     border: 2px solid #CC99FF;
 }
-/* O Modal (inicialmente oculto) */
+
 .modal {
-    display: none; /* Modal começa invisível */
+    display: none;
     position: fixed;
-    z-index: 1; /* Fica sobre outros elementos */
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Ativa o scroll se necessário */
-    background-color: rgba(0, 0, 0, 0.4); /* Fundo escuro semi-transparente */
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* O conteúdo do modal */
 .modal-content {
     background-color: white;
     margin: 15% auto;
@@ -225,7 +247,6 @@ body {
     border-radius: 10px;
 }
 
-/* O botão de fechar (X) */
 .close {
     color: #aaa;
     float: right;
@@ -238,4 +259,20 @@ body {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.custom-button {
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+}
+
+.custom-button img {
+    width: 40px;
+    height: 40px;
+}
+
+.custom-button:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
 }

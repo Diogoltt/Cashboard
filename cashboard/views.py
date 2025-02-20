@@ -72,29 +72,6 @@ def user_logout(request):
     logout(request)
     return redirect('index')
 
-@login_required
-def mercado(request):
-    return render(request, 'mercado.html')
-
-@login_required
-def pet(request):
-    return render(request, 'pet.html')
-
-@login_required
-def lazer(request):
-    return render(request, 'lazer.html')
-
-@login_required
-def farmacia(request):
-    return render(request, 'farmacia.html')
-
-@login_required
-def viagem(request):
-    return render(request, 'viagem.html')
-
-@login_required
-def poupanca(request):
-    return render(request, 'poupanca.html')
 
 @login_required
 def dashboards(request):
@@ -120,33 +97,12 @@ def dashboards(request):
     }
     return render(request, 'dashboards.html', context)
 
-def salvar_receita(request):
-    if request.method == 'POST':
-        valor = request.POST.get('valor')
-        data = request.POST.get('data')
-        categoria = request.POST.get('categoria')
 
-        # Cria e salva uma nova receita no banco de dados
-        Receita.objects.create(valor=valor, data=data, descricao=categoria)
-
-        return redirect('dashboards')  # Redireciona de volta para a página inicial
-
-def salvar_despesa(request):
-    if request.method == 'POST':
-        valor = request.POST.get('valor')
-        data = request.POST.get('data')
-        categoria = request.POST.get('categoria')
-
-        # Cria e salva uma nova despesa no banco de dados
-        Despesa.objects.create(valor=valor, data=data, descricao=categoria)
-
-        return redirect('dashboards')  # Redireciona de volta para a página inicial
-
-
+@login_required
 def financas(request):
     return render(request, 'financas.html')
 
-
+@login_required
 def categoria_view(request, categoria):
     # Filtro por categoria
     despesas = Despesa.objects.filter(user=request.user, categoria=categoria)
@@ -158,3 +114,24 @@ def categoria_view(request, categoria):
         "receitas": receitas,
     }
     return render(request, "categoria_view.html", context)
+
+
+@login_required
+def add_financa(request):
+    if request.method == 'POST':
+        valor = request.POST.get('valor')
+        data = request.POST.get('dataFinalMeta')
+        descricao = request.POST.get('descricao')
+        categoria = request.POST.get('categoria')
+        tipo = request.POST.get('tipo')
+        pagamento = request.POST.get('transacao')
+        print(valor, data, categoria, tipo)
+
+        if tipo == 'entrada':
+            # Cria e salva uma nova receita no banco de dados
+            Receita.objects.create(valor=valor, data=data, descricao=descricao, categoria=categoria, user=request.user)
+        elif tipo == 'saida':
+            # Cria e salva uma nova despesa no banco de dados
+            Despesa.objects.create(valor=valor, data=data, descricao=descricao, categoria=categoria, pagamento=pagamento, user=request.user)
+        
+        return redirect('financas')  # Redireciona para a página de finanças após salvar

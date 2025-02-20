@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
     <link rel="stylesheet" href="{% static 'styles/' %}{{ categoria }}.css">
+    <link rel="stylesheet" href="{% static 'styles/categoria_view.css' %}">
+    <link rel="shortcut icon" href="{%static 'assets/logo.png'%}" type="image/x-icon">
     <title>{{ categoria|capfirst }}</title>
 </head>
+
 <body>
-    <header class="headerDashboard">
-        <div>
-            <p class="blablaHeader">Ca$h Board</p>
-            <a href="" class="ancora">Gráficos</a>
+    <header class="headerDashboard cor-dinamica">
+        <div style="display: block;">
+            <div class="logo">
+                <img src="{%static 'assets/logo2.png'%}" alt="">
+                <p>Ca$h Board</p>
+            </div>
+            <a href="{% url 'dashboards' %}"
+                class="{% if request.path == '/dashboards' %}active{% endif %} ancora">Gráficos</a>
             <a rel="noopener noreferrer" class="ancora">•</a>
-            <a href="" class="ancora">Minhas finanças</a>
+            <a href="{% url 'financas' %}" class="{% if request.path == '/financas' %}active{% endif %} ancora">Minhas
+                finanças</a>
         </div>
+        <img class="categoria-dinamica" id="pet" src="{% static 'assets/svg dinamico/petsvg.svg' %}" alt="">
+        <img class="categoria-dinamica" id="lazer" src="{% static 'assets/svg dinamico/lazersvg.svg' %}" alt="">
+        <img class="categoria-dinamica" id="farmacia" src="{% static 'assets/svg dinamico/farmaciasvg.svg' %}" alt="">
+        <img class="categoria-dinamica" id="viagem" src="{% static 'assets/svg dinamico/viagemsvg.svg' %}" alt="">
+        <img class="categoria-dinamica" id="mercado" src="{% static 'assets/svg dinamico/mercadosvg.svg' %}" alt="">
+        <img class="categoria-dinamica" id="poupanca" src="{% static 'assets/svg dinamico/poupancasvg.svg' %}" alt="">
     </header>
 
-    <section>
-        <h2>Despesas</h2>
-        <table>
+    <div class="botoes">
+        <button class="btn1 cor-dinamica"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-funnel" viewBox="0 0 16 16">
+                <path
+                    d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2z" />
+            </svg> Filtrar</button>
+        <button class="btn2 cor-dinamica">Gerar relatório</button>
+    </div>
+
+    <section class="container">
+        <table class="container-tabela">
             <thead>
                 <tr>
                     <th>Data</th>
@@ -43,30 +66,7 @@
                 {% endfor %}
             </tbody>
         </table>
-
-        <h2>Receitas</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Data</th>
-                    <th>Descrição</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for receita in receitas %}
-                <tr>
-                    <td>{{ receita.data }}</td>
-                    <td>{{ receita.descricao }}</td>
-                    <td>{{ receita.valor }}</td>
-                </tr>
-                {% empty %}
-                <tr>
-                    <td colspan="3">Nenhuma receita registrada nesta categoria.</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
     </section>
 </body>
+
 </html>

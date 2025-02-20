@@ -16,8 +16,8 @@
         <section id="cadastro">
             <div class="register-header">
                 <div class="logo">
-                    <img src="" alt="img-logo">
-                    <h1>Ca$h Board</h1>
+                    <img src="{%static 'assets/logo2.png'%}" alt="">
+                    <p>Ca$h Board</p>
                 </div>
             </div>
 
@@ -26,30 +26,30 @@
                 {% if error %}
                 <p style="color: red;">{{ error }}</p>
                 {% endif %}
-    
+
                 <div class="input-group">
                     <label for="nome">Nome</label>
                     <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
                 </div>
-    
+
                 <div class="input-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Digite seu email" required>
                 </div>
-    
+
                 <div class="input-group">
                     <label for="password">Senha</label>
                     <input type="password" name="password" id="password" placeholder="••••••••" required>
                     <i class="bi bi-eye-fill" id="toggle-password"></i>
                 </div>
-    
+
                 <div class="input-group">
                     <label for="confirm-password">Confirma Senha</label>
                     <input type="password" name="confirm-password" id="confirm-password" placeholder="••••••••"
                         required>
                     <i class="bi bi-eye-fill" id="toggle-confirm-password"></i>
                 </div>
-    
+
                 <div class="password-requirements">
                     <p>A senha deve conter:</p>
                     <ul>
@@ -59,10 +59,9 @@
                         <li id="special_validate">Pelo menos um caractere especial (como !@#$%^&*)</li>
                     </ul>
                 </div>
-    
-                <div class="btn-group">
-                    <button type="submit">Cadastrar Usuário</button>
-                </div>
+
+                <button class="btn-group" type="submit">Cadastrar Usuário</button>
+                <a class="btn-group" id="btn-cadastro" href="{% url 'index' %}">Voltar</a>
             </form>
         </section>
 
@@ -88,6 +87,5 @@
     </main>
     <script src="{% static 'scripts/toggle_password.js' %}"></script>
 </body>
-
 
 </html>

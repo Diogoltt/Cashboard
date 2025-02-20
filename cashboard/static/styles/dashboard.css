@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: Poppins, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
@@ -14,14 +16,21 @@ body {
     align-items: center;
 }
 
-.blablaHeader {
-    font-size: 24px;
-    font-weight: bold;
-    padding-bottom: 1rem;
+.headerDashboard img {
+    height: 50px;
+    width: 50px;
+    padding-right: 5px;
 }
 
-.ancora
-{
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    user-select: none;
+}
+
+.ancora {
     text-decoration: none;
     color: #ffff;
     font-weight: bold;
@@ -50,24 +59,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
-}
-
-.blablaHeader {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-}
-
-.navigation {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.ancora {
-    text-decoration: none;
-    color: #ffff;
     font-weight: bold;
 }
 
@@ -124,53 +115,42 @@ body {
 .charts-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px; /* Increased gap */
-    /* padding: 20px; */
+    gap: 30px;
 }
 
 .chart-container {
     background: white;
-    padding: 25px; /* Increased padding */
+    padding: 25px;
     padding-bottom: 4rem;
     border-radius: 4px;
     border: 1px solid #e0e0e0;
-    height: 380px; /* Increased height */
+    height: 380px;
     display: flex;
     flex-direction: column;
 }
 
 .chart-container h3 {
     color: #455A64;
-    font-size: 14px; /* Adjusted font size */
+    font-size: 14px;
     font-weight: 500;
     margin-bottom: 25px;
     text-align: center;
 }
 
 .custom-button {
-    
-    background-color: #37393f;
-    color: #FFFFFF; 
-    font-family: Arial, system-ui, sans-serif;
+    color: #FFFFFF;
     text-decoration: none;
     display: block;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: normal;
-    border: 1px solid #E2E8F0;
-  
+}
+
+.custom-button img {
+    width: 40px;
+    height: 40px;
 }
 
 .custom-button:hover {
-  
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      filter: brightness(110%);
-     transform: scale(1.05); 
-      transition: all 0.3s ease;
-    
+    transform: scale(1.05);
+    transition: all 0.3s ease;
 }
 
 @media (max-width: 1200px) {
@@ -183,12 +163,12 @@ body {
     .container {
         padding: 10px;
     }
-    
+
     .charts-grid {
         grid-template-columns: 1fr;
-        gap: 20px; /* Reduced gap on mobile */
+        gap: 20px;
     }
-    
+
     .chart-container,
     .chart-container:nth-child(3),
     .chart-container:nth-child(6) {

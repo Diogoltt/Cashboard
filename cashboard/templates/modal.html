@@ -1,0 +1,190 @@
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Modal com Formulário</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/teste.css">
+    </head>
+    
+    <body>
+    
+        <!-- Button trigger modal -->
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Abrir Modal
+        </button>
+    
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal3">
+            Gerar relatório
+        </button> -->
+    
+    
+    
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Formulário -->
+                        <h2 class="modalTitutlo">Gestor de Finanças</h2>
+                        <form id="formMetas" class="p-4 bg-white rounded shadow-sm" method="POST" action="{% url 'add_financa' %}">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="tipo" id="entrada" value="entrada">
+                                    <label class="form-check-label" for="entrada">Entrada</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="tipo" id="saida" value="saida">
+                                    <label class="form-check-label" for="saida">Saída</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="descricaoNome" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="descricaoNome" name="descricaoNome" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="descricaoMeta" class="form-label">Descrição</label>
+                                <input type="text" class="form-control" id="descricaoMeta" name="descricaoMeta" required>
+                            </div>
+    
+                            <!-- Método de Transação e Categoria -->
+                            <div class="campo-lado-a-lado">
+                                <div class="campo-metodo">
+                                    <label for="transacao" class="form-label">Método de Transação</label>
+                                    <select id="transacao" name="transacao" class="form-control" required>
+                                        <option value="credito">Crédito</option>
+                                        <option value="debito">Débito</option>
+                                        <option value="pix">Pix</option>
+                                        <option value="dinheiro">Dinheiro</option>
+                                        <option value="ted/doc">TED/DOC</option>
+                                    </select>
+                                </div>
+                                <div class="campo-categoria">
+                                    <label for="categoria" class="form-label">Categoria</label>
+                                    <select id="categoria" name="categoria" class="form-control" required>
+                                        <option value="mercado">Mercado</option>
+                                        <option value="pet">Pet</option>
+                                        <option value="lazer">Lazer</option>
+                                        <option value="farmacia">Farmácia</option>
+                                        <option value="viagem">Viagens</option>
+                                        <option value="poupanca">Poupança</option>
+                                    </select>
+                                </div>
+                            </div>
+    
+                            <!-- Valor e Data -->
+                            <div class="campo-lado-a-lado">
+                                <div class="campo-valor">
+                                    <label for="valor" class="form-label">Valor</label>
+                                    <input type="decimal" class="form-control" id="valor" name="valor" required>
+                                </div>
+                                <div class="campo-data">
+                                    <label for="dataFinalMeta" class="form-label">Data</label>
+                                    <input type="date" class="form-control" id="dataFinalMeta" name="dataFinalMeta"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btnSalvar">Salvar Finanças</button>
+                            </div>
+                        </form>
+                        
+                        <!-- {{ form.as_p }} -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Modal 3-->
+        <div class="modal fade" id="Modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Formulário -->
+                        <h2 class="modalTitutlo">Gerar Relatório</h2>
+                        <form id="formMetas" class="p-4 bg-white rounded shadow-sm" method="POST" action="{% url 'add_financa' %}">
+                            <div class="mb-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="tipo" id="entrada" value="entrada">
+                                    <label class="form-check-label" for="entrada">Mensal</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="tipo" id="saida" value="saida">
+                                    <label class="form-check-label" for="saida">Anual</label>
+                                </div>
+                            </div>
+    
+                            <!-- Mês Seleção -->
+                            <div class="mb-3" id="mesField">
+                                <label for="mesRelatorio" class="form-label">Mês:</label>
+                                <select id="mesRelatorio" name="mesRelatorio" class="form-control" required>
+                                    <option value="1">Janeiro</option>
+                                    <option value="2">Fevereiro</option>
+                                    <option value="3">Março</option>
+                                    <option value="4">Abril</option>
+                                    <option value="5">Maio</option>
+                                    <option value="6">Junho</option>
+                                    <option value="7">Julho</option>
+                                    <option value="8">Agosto</option>
+                                    <option value="9">Setembro</option>
+                                    <option value="10">Outubro</option>
+                                    <option value="11">Novembro</option>
+                                    <option value="12">Dezembro</option>
+                                </select>
+                            </div>
+    
+                            <!-- Ano Seleção -->
+                            <div class="mb-3" id="anoField" style="display:none;">
+                                <label for="anoRelatorio" class="form-label">Ano:</label>
+                                <input type="number" class="form-control" id="anoRelatorio" name="anoRelatorio" required>
+                            </div>
+    
+                            <!-- Categoria -->
+                            <div class="mb-3">
+                                <label for="categoriaRelatorio" class="form-label">Categoria</label>
+                                <select id="categoria" name="categoria" class="form-control" required>
+                                    <option value="1">Mercado</option>
+                                    <option value="2">Pet</option>
+                                    <option value="3">Lazer</option>
+                                    <option value="4">Farmácia</option>
+                                    <option value="5">Viagens</option>
+                                    <option value="6">Poupança</option>
+                                </select>
+                            </div>
+    
+                            <!-- Tipo -->
+                            <div class="mb-3">
+                                <label for="tipoRelatorio" class="form-label">Tipo</label>
+                                <select id="categoria" name="categoria" class="form-control" required>
+                                    <option value="1">CSV</option>
+                                    <option value="2">PDF</option>
+                                </select>
+                            </div>
+                        </form>
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btnSalvar">Salvar Relatório</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    

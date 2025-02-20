@@ -1,0 +1,72 @@
+/* Estilo para os campos lado a lado */
+.campo-lado-a-lado {
+    display: flex;
+    justify-content: space-between; /* Espaço entre os campos */
+    gap: 20px; /* Espaçamento entre os campos */
+}
+
+.campo-metodo, .campo-categoria, .campo-valor, .campo-data {
+    flex: 1; /* Faz os campos ocuparem o mesmo tamanho */
+}
+
+/* Ajuste para o campo categoria e o botão */
+.campo-categoria {
+    display: flex;  /* Flexbox para alinhar o select e o botão */
+    flex-direction: column; /* Alinha o label em cima do select */
+    gap: 5px; /* Espaço entre o select e o botão */
+}
+
+.campo-categoria label {
+    display: block; /* Faz com que o label ocupe toda a largura e fique em cima do select */
+    margin-bottom: 5px; /* Espaço entre o label e o select */
+}
+
+.campo-categoria select {
+    flex-grow: 1; /* Faz o select ocupar o restante do espaço */
+    width: 100%; /* Faz o select ocupar toda a largura disponível */
+}
+
+.campo-categoria .btnModal2 {
+    height: auto; /* Ajusta a altura do botão automaticamente */
+    margin-top: 10px; /* Espaço entre o select e o botão */
+}
+
+/* Ajuste de layout para telas pequenas */
+@media (max-width: 768px) {
+    .campo-lado-a-lado {
+        flex-direction: column; /* Alinha os campos verticalmente em telas pequenas */
+    }
+
+    .campo-metodo, .campo-categoria, .campo-valor, .campo-data {
+        flex: none; /* Remover o "flex: 1" para que os campos não ocupem todo o espaço */
+        width: 100%; /* Faz os campos ocuparem toda a largura disponível */
+    }
+
+    .campo-categoria .btn {
+        margin-left: 0; /* Remove a margem esquerda do botão em telas pequenas */
+        margin-top: 10px; /* Espaçamento em cima do botão */
+    }
+}
+
+.btnModal2 {
+    background-color: white;
+    color: #25744D;
+    border: none;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+.modalTitutlo{
+    color: #25744D;
+}
+
+.btnSalvar{
+    width: 100%;
+    padding: 10px;
+    background-color: #25744D;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}

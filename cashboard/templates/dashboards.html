@@ -9,18 +9,23 @@
     <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="{%static 'assets/logo.png'%}" type="image/x-icon">
 </head>
 
 <body>
     <header class="headerDashboard">
         <div style="display: block;">
-            <p class="blablaHeader">Ca$h Board</p>
-            <a href="" class="ancora">Gráficos</a>
+            <div class="logo">
+                <img src="{%static 'assets/logo2.png'%}" alt="">
+                <p>Ca$h Board</p>
+            </div>
+            <a href="{% url 'dashboards' %}"
+                class="{% if request.path == '/dashboards' %}active{% endif %} ancora">Gráficos</a>
             <a rel="noopener noreferrer" class="ancora">•</a>
-            <a href="{% url 'financas' %}" class="ancora">Minhas finanças</a>
+            <a href="{% url 'financas' %}" class="{% if request.path == '/financas' %}active{% endif %} ancora">Minhas
+                finanças</a>
         </div>
-        <!-- <i class="fa-solid fa-arrow-left" style="color: white; width: 50px; height: 50px;"></i> -->
-         <a href="{% url 'logout' %}" class="custom-button">Logout</a>
+        <a href="{% url 'logout' %}" class="custom-button"><img src="{% static 'assets/logout.svg' %}" alt=""></a>
     </header>
 
     <div class="container">
