@@ -13,5 +13,6 @@ urlpatterns = [
     path('farmacia', views.farmacia, name='farmacia'),
     path('poupanca', views.poupanca, name='poupanca'),
     path('dashboards', views.dashboards, name='dashboards'),
-    
+    path('financas', views.financas, name='financas'),
+    path("categoria/<str:categoria>/", views.categoria_view, name="categoria_view"),   
 ]

@@ -60,7 +60,7 @@ body {
     cursor: pointer;
 }
 
-.btn-group {
+/* .btn-group {
     border: 2px solid #25744D;
     background-color: #fff;
     transition: all 0.3s ease;
@@ -69,33 +69,44 @@ body {
     font-size: 1rem;
     cursor: pointer;
     user-select: none;
+    text-decoration: none;
 }
 
 .btn-group:hover {
     background-color: #25744D;
-}
+} */
 
-.btn-group:hover a {
-    color: #fff;
-}
-
-.btn-group a {
-    background: none;
-    border: none;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #25744D;
+.btn-group {
+    
+    background-color: #25744d;
+    color: #FFFFFF; 
+    font-family: Arial, system-ui, sans-serif;
+    font-size: medium;
+    text-decoration: none;
+    display: block;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.5rem 1rem;
-    cursor: inherit;
-    user-select: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid #257400;
+    width: 80%;
+    text-align: center;
+    text-transform: uppercase;
+  
 }
 
-.btn-group a:hover {
-    color: #fff;
+.btn-group:hover {
+  
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      filter: brightness(110%);
+     transform: scale(1.05); 
+      transition: all 0.3s ease;
+    
 }
-
 .sem_conta {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .sem_conta p {

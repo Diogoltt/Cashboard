@@ -17,6 +17,7 @@ body {
 .blablaHeader {
     font-size: 24px;
     font-weight: bold;
+    padding-bottom: 1rem;
 }
 
 .ancora
@@ -146,6 +147,31 @@ body {
     text-align: center;
 }
 
+.custom-button {
+    
+    background-color: #37393f;
+    color: #FFFFFF; 
+    font-family: Arial, system-ui, sans-serif;
+    text-decoration: none;
+    display: block;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: normal;
+    border: 1px solid #E2E8F0;
+  
+}
+
+.custom-button:hover {
+  
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      filter: brightness(110%);
+     transform: scale(1.05); 
+      transition: all 0.3s ease;
+    
+}
 
 @media (max-width: 1200px) {
     .charts-grid {

@@ -18,7 +18,6 @@
             <a rel="noopener noreferrer" class="ancora">•</a>
             <a href="" class="ancora">Minhas finanças</a>
         </div>
-
     </header>
     <div class="container">
         <div class="btn-relatorio">
@@ -61,25 +60,25 @@
                     <button class="btn-cat editar">Editar</button>
                 </div>
                 <div class="categorias-conteudo">
-                    <a class="categoria-input mercado" href="">
-                        <img src="{%static 'assets/mercadosvg.svg'%}" alt="">
+                    <a class="categoria-input mercado" href="{% url 'categoria_view' 'mercado' %}">
+                        <img src="{% static 'assets/mercadosvg.svg' %}" alt="">
                     </a>
-                    <a class="categoria-input pet" href="">
-                        <img src="{%static 'assets/petsvg.svg'%}" alt="">
+                    <a class="categoria-input pet" href="{% url 'categoria_view' 'pet' %}">
+                        <img src="{% static 'assets/petsvg.svg' %}" alt="">
                     </a>
-                    <a class="categoria-input lazer" href="">
-                        <img src="{%static 'assets/lazersvg.svg'%}" alt="">
+                    <a class="categoria-input lazer" href="{% url 'categoria_view' 'lazer' %}">
+                        <img src="{% static 'assets/lazersvg.svg' %}" alt="">
                     </a>
-                    <a class="categoria-input farmacia" href="">
-                        <img src="{%static 'assets/farmaciasvg.svg'%}" alt="">
+                    <a class="categoria-input farmacia" href="{% url 'categoria_view' 'farmacia' %}">
+                        <img src="{% static 'assets/farmaciasvg.svg' %}" alt="">
                     </a>
-                    <a class="categoria-input viagem" href="">
-                        <img src="{%static 'assets/viagemsvg.svg'%}" alt="">
+                    <a class="categoria-input viagem" href="{% url 'categoria_view' 'viagem' %}">
+                        <img src="{% static 'assets/viagemsvg.svg' %}" alt="">
                     </a>
-                    <a class="categoria-input poupanca" href="">
-                        <img src="{%static 'assets/poupancasvg.svg'%}" alt="">
+                    <a class="categoria-input poupanca" href="{% url 'categoria_view' 'poupanca' %}">
+                        <img src="{% static 'assets/poupancasvg.svg' %}" alt="">
                     </a>
-                </div>
+                </div>                
             </div>
         </div>
     </div>

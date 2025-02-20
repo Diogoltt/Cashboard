@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/' %}{{ categoria }}.css">
+    <title>{{ categoria|capfirst }}</title>
+</head>
+<body>
+    <header class="headerDashboard">
+        <div>
+            <p class="blablaHeader">Ca$h Board</p>
+            <a href="" class="ancora">Gráficos</a>
+            <a rel="noopener noreferrer" class="ancora">•</a>
+            <a href="" class="ancora">Minhas finanças</a>
+        </div>
+    </header>
+
+    <section>
+        <h2>Despesas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Forma de Pagamento</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for despesa in despesas %}
+                <tr>
+                    <td>{{ despesa.data }}</td>
+                    <td>{{ despesa.descricao }}</td>
+                    <td>{{ despesa.pagamento }}</td>
+                    <td>{{ despesa.valor }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">Nenhuma despesa registrada nesta categoria.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Receitas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for receita in receitas %}
+                <tr>
+                    <td>{{ receita.data }}</td>
+                    <td>{{ receita.descricao }}</td>
+                    <td>{{ receita.valor }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3">Nenhuma receita registrada nesta categoria.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

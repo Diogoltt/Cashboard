@@ -70,7 +70,7 @@ def cadastro(request):
 
 def user_logout(request):
     logout(request)
-    return redirect('')
+    return redirect('index')
 
 @login_required
 def mercado(request):
@@ -141,3 +141,20 @@ def salvar_despesa(request):
         Despesa.objects.create(valor=valor, data=data, descricao=categoria)
 
         return redirect('dashboards')  # Redireciona de volta para a página inicial
+
+
+def financas(request):
+    return render(request, 'financas.html')
+
+
+def categoria_view(request, categoria):
+    # Filtro por categoria
+    despesas = Despesa.objects.filter(user=request.user, categoria=categoria)
+    receitas = Receita.objects.filter(user=request.user, categoria=categoria)
+    
+    context = {
+        "categoria": categoria,
+        "despesas": despesas,
+        "receitas": receitas,
+    }
+    return render(request, "categoria_view.html", context)
