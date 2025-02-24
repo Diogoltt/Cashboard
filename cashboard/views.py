@@ -121,7 +121,7 @@ def add_financa(request):
     if request.method == 'POST':
         valor = request.POST.get('valor')
         data = request.POST.get('dataFinalMeta')
-        descricao = request.POST.get('descricao')
+        descricao = request.POST.get('descricaoMeta')
         categoria = request.POST.get('categoria')
         tipo = request.POST.get('tipo')
         pagamento = request.POST.get('transacao')
